@@ -2,23 +2,25 @@
 
 <p align="center"><img src="assets/readme-banner.svg" alt="ShareClean animated banner" width="100%"></p>
 
-Re-encode photos locally before sharing them.
+A privacy-first image metadata cleaner. Re-encode a selected photo in your browser before sharing it.
 
 ## Features
-- Responsive, focused interface
-- No account, backend, build step, or third-party JavaScript dependencies
-- Local browser processing and storage where applicable
-- Export or print options to keep control of your work
+- Select a local image and preview it
+- Re-encode to JPEG, PNG, or WebP
+- Adjustable JPEG/WebP quality
+- Show original and output file sizes and image dimensions
+- Download a separate cleaned copy; original remains untouched
+- No upload endpoint, account, backend, or external dependency
 
 ## Run it
-1. Download **Code → Download ZIP** and extract it.
+1. Download **Code → Download ZIP** and extract the folder.
 2. Open `index.html` in a modern browser.
-3. Start using the app. No package installation is required.
+3. Select an image, choose the output format, then select **Clean & download**.
 
-Optional local server: run `python -m http.server 8000` in the project folder, then visit `http://localhost:8000`.
+Optional local server: `python -m http.server 8000`, then visit `http://localhost:8000`.
 
-## Notes
-Browser storage belongs to the current browser profile and can be erased by clearing site data. Export important work regularly. Review generated files before using them for important purposes.
+## Important privacy note
+The image is decoded and re-encoded locally using the browser canvas. This commonly removes metadata not preserved by the browser decoder/encoder, but format support varies. It is not a forensic guarantee that every metadata field has been removed. Verify the exported file with a trusted metadata inspector if the result is security-critical. Re-encoding can change image quality or transparency (JPEG does not support transparency).
 
 ## License
 MIT — see [LICENSE](LICENSE).
